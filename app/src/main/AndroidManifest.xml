@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".TakeOrChooseImage" />
-        <activity android:name=".ImageView"></activity>
     </application>
 
 </manifest>
