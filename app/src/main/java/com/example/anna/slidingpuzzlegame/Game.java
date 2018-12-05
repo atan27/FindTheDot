@@ -3,11 +3,11 @@ package com.example.anna.slidingpuzzlegame;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ImageView extends AppCompatActivity {
+public class Game extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_view);
+        setContentView(R.layout.activity_game);
     }
 }
