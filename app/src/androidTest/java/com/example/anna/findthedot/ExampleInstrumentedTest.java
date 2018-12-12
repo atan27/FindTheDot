@@ -1,4 +1,4 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.anna.slidingpuzzlegame", appContext.getPackageName());
+        assertEquals("com.example.anna.findthedot", appContext.getPackageName());
     }
 }

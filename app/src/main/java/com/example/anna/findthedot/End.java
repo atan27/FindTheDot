@@ -1,4 +1,4 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,26 +1,15 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class Game extends AppCompatActivity {
 
@@ -44,10 +33,11 @@ public class Game extends AppCompatActivity {
         ImageView circle = (ImageView) findViewById(R.id.circle);
 
         // creates a bitmap image for the circle to place onto canvas
-        Bitmap bitmap2 = Bitmap.createBitmap(1000, 1000, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap2 = Bitmap.createBitmap(54, 54, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap2);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.BLUE);
+
 
         // generates random floats for the circle to be placed at
         float x = (float) Math.random() * bitmap2.getWidth();

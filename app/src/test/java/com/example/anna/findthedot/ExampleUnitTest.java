@@ -1,4 +1,4 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 
 import org.junit.Test;
 
