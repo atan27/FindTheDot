@@ -47,13 +47,11 @@ public class TakeOrChooseImage extends AppCompatActivity {
     private ImageView imageview;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
-
-    //new stuff below
     private Bitmap bitmap;
     private Bitmap thumbnail;
-    // variable photo tells us whether to getIntent from gallery or camera
+
+    // variable photo tells next activity whether to getIntent from gallery or camera
     String photo = "gallery";
-    //end of new stuff
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +81,7 @@ public class TakeOrChooseImage extends AppCompatActivity {
 
     }
 
+    // function to open new activity (Game.java)
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
         if (photo.equals("gallery")) {
