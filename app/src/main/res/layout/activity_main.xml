@@ -12,7 +12,7 @@
         android:id="@+id/gameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sliding Puzzle Game"
+        android:text="Find the Dot"
         android:textSize="24sp"
         android:textStyle="bold"
         app:fontFamily="monospace"

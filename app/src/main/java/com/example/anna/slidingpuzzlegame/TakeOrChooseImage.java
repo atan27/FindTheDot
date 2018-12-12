@@ -51,6 +51,8 @@ public class TakeOrChooseImage extends AppCompatActivity {
     //new stuff below
     private Bitmap bitmap;
     private Bitmap thumbnail;
+    // variable photo tells us whether to getIntent from gallery or camera
+    String photo = "gallery";
     //end of new stuff
 
     @Override
@@ -83,11 +85,12 @@ public class TakeOrChooseImage extends AppCompatActivity {
 
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
-        intent.putExtra("bitmap", bitmap);
-        intent.putExtra("thumbnail", thumbnail);
+        if (photo.equals("gallery")) {
+            intent.putExtra("bitmap", bitmap);
+        } else {
+            intent.putExtra("bitmap", thumbnail);
+        }
         startActivity(intent);
-        // Intent intent = new Intent(this, Activity.class);
-        // intent.putExtra("bitmap", bitmap);
     }
 
     private void showPictureDialog(){
@@ -150,6 +153,7 @@ public class TakeOrChooseImage extends AppCompatActivity {
         } else if (requestCode == CAMERA) {
             thumbnail = (Bitmap) data.getExtras().get("data");
             imageview.setImageBitmap(thumbnail);
+            photo = "camera";
             saveImage(thumbnail);
             Toast.makeText(TakeOrChooseImage.this, "Image Saved!", Toast.LENGTH_SHORT).show();
         }
