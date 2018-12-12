@@ -1,12 +1,9 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 import android.Manifest;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.anna.slidingpuzzlegame.R;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -18,26 +15,20 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 
 public class TakeOrChooseImage extends AppCompatActivity {
@@ -45,7 +36,7 @@ public class TakeOrChooseImage extends AppCompatActivity {
     private Button btn;
     private Button startGame;
     private ImageView imageview;
-    private static final String IMAGE_DIRECTORY = "/demonuts";
+    private static final String IMAGE_DIRECTORY = "/photos";
     private int GALLERY = 1, CAMERA = 2;
     private Bitmap bitmap;
     private Bitmap thumbnail;

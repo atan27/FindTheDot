@@ -1,12 +1,10 @@
-package com.example.anna.slidingpuzzlegame;
+package com.example.anna.findthedot;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
