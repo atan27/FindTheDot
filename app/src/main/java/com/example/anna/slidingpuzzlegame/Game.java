@@ -32,21 +32,6 @@ public class Game extends AppCompatActivity {
         // variable bitmap is the bitmap image of photo from gallery or the photo taken from the camera
         Bitmap bitmap;
 
-        /*
-        // variable photo tells us whether to getIntent from gallery or camera
-        String photo = "gallery";
-
-        if (photo.equals("gallery")) {
-            bitmap = getIntent().getParcelableExtra("bitmap");
-            imageView = (ImageView) findViewById(R.id.imageView);
-            imageView.setImageBitmap(bitmap);
-        } else if (photo.equals("camera")) {
-            bitmap = getIntent().getParcelableExtra("thumbnail");
-            imageView = (ImageView) findViewById(R.id.imageView);
-            imageView.setImageBitmap(bitmap);
-        }
-        */
-
         // displays selected photo from gallery onto this new activity
         bitmap = getIntent().getParcelableExtra("bitmap");
         imageView = (ImageView) findViewById(R.id.imageView);
