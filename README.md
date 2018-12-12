@@ -1,6 +1,8 @@
 # FindTheDot
 Final Project for CS 125, Fall 2018.
 
+Select an image from your gallery or take a new picture, and find the blue dot in the imported image!
+
 ## Getting Started
 
 ### Prerequisites
