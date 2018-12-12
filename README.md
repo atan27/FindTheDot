@@ -7,7 +7,7 @@ Select an image from your gallery or take a new picture, and find the blue dot i
 
 ### Prerequisites
 
-- Have [Android Studio](https://developer.android.com/studio/#downloads) installed.
+- Have [Android Studio](https://developer.android.com/studio/#downloads) downloaded and installed.
 - For non-Android phone users, install the Android emulator in Android Studio.
 
 ### Installation
