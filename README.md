@@ -23,3 +23,15 @@ To run this app on a live system:
 
 - Android phone users:
 1. Follow the instructions [here](https://developer.android.com/training/basics/firstapp/running-app).
+
+## Built With
+
+Android Studio
+
+## Contributing
+
+Please see list of [contributers](https://github.com/atan27/FindTheDot/graphs/contributors) for participants of this project.
+
+### Credits
+
+We referred to {insert link here} for the camera section of our app. We also referred to [this](https://stackoverflow.com/questions/5663671/creating-an-empty-bitmap-and-drawing-though-canvas-in-android) for help with drawing the dot over the imported image.
