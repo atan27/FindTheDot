@@ -1,5 +1,6 @@
 package com.example.anna.slidingpuzzlegame;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -11,6 +12,8 @@ import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -50,13 +53,25 @@ public class Game extends AppCompatActivity {
         float x = (float) Math.random() * bitmap2.getWidth();
         float y = (float) Math.random() * bitmap2.getHeight();
 
+
         // draws the canvas circle on the bitmap image at a random point
         canvas.drawCircle(x, y, 10, paint);
 
         // displays the circle at the random point
         circle.setImageBitmap(bitmap2);
+
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                endOfGame();
+            }
+        });
     }
 
+    public void endOfGame() {
+        Intent intent = new Intent(this, End.class);
+        startActivity(intent);
+    }
 }
 
 
