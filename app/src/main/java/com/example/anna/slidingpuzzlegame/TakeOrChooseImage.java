@@ -1,5 +1,7 @@
 package com.example.anna.slidingpuzzlegame;
 import android.Manifest;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -32,7 +34,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 public class TakeOrChooseImage extends AppCompatActivity {
@@ -42,6 +47,11 @@ public class TakeOrChooseImage extends AppCompatActivity {
     private ImageView imageview;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
+    private Bitmap bitmap;
+    private Bitmap thumbnail;
+
+    // variable photo tells next activity whether to getIntent from gallery or camera
+    String photo = "gallery";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +81,14 @@ public class TakeOrChooseImage extends AppCompatActivity {
 
     }
 
+    // function to open new activity (Game.java)
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
+        if (photo.equals("gallery")) {
+            intent.putExtra("bitmap", bitmap);
+        } else {
+            intent.putExtra("bitmap", thumbnail);
+        }
         startActivity(intent);
     }
 
@@ -122,7 +138,7 @@ public class TakeOrChooseImage extends AppCompatActivity {
             if (data != null) {
                 Uri contentURI = data.getData();
                 try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
                     String path = saveImage(bitmap);
                     Toast.makeText(TakeOrChooseImage.this, "Image Saved!", Toast.LENGTH_SHORT).show();
                     imageview.setImageBitmap(bitmap);
@@ -134,8 +150,9 @@ public class TakeOrChooseImage extends AppCompatActivity {
             }
 
         } else if (requestCode == CAMERA) {
-            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+            thumbnail = (Bitmap) data.getExtras().get("data");
             imageview.setImageBitmap(thumbnail);
+            photo = "camera";
             saveImage(thumbnail);
             Toast.makeText(TakeOrChooseImage.this, "Image Saved!", Toast.LENGTH_SHORT).show();
         }
@@ -205,5 +222,6 @@ public class TakeOrChooseImage extends AppCompatActivity {
                 .onSameThread()
                 .check();
     }
+
 
 }
