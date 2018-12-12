@@ -36,4 +36,4 @@ Please see list of [contributers](https://github.com/atan27/FindTheDot/graphs/co
 
 ### Credits
 
-We referred to [here](https://demonuts.com/pick-image-gallery-camera-android/) for the camera section of our app. We also referred to [this](https://stackoverflow.com/questions/5663671/creating-an-empty-bitmap-and-drawing-though-canvas-in-android) for help with drawing the dot over the imported image.
+We referred to [this](https://demonuts.com/pick-image-gallery-camera-android/) for the camera section of our app. We also referred to [this](https://stackoverflow.com/questions/5663671/creating-an-empty-bitmap-and-drawing-though-canvas-in-android) for help with drawing the dot over the imported image.
