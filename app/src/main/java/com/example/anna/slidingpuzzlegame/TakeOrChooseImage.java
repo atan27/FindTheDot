@@ -84,6 +84,7 @@ public class TakeOrChooseImage extends AppCompatActivity {
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
         intent.putExtra("bitmap", bitmap);
+        intent.putExtra("thumbnail", thumbnail);
         startActivity(intent);
         // Intent intent = new Intent(this, Activity.class);
         // intent.putExtra("bitmap", bitmap);

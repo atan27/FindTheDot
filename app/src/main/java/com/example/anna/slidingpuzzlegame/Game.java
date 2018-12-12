@@ -20,43 +20,56 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Game extends AppCompatActivity {
-    private ArrayList<Bitmap> pieces;
-    private ImageView imageView;
-    private Bitmap bitmap;
-    //private ImageView imageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        bitmap = getIntent().getParcelableExtra("bitmap");
-        final RelativeLayout layout = findViewById(R.id.layout);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        //imageView.setImageBitmap(thumbnail);
-        imageView.setImageBitmap(bitmap);
 
-        ImageView circle = (ImageView) findViewById(R.id.circle);
+        // variable imageView displays taken/chosen image
+        ImageView imageView;
+
+        // variable bitmap is the bitmap image of photo from gallery or the photo taken from the camera
+        Bitmap bitmap;
 
         /*
-        Display display = getWindowManager().getDefaultDisplay();
-        Point screenSize= new Point();
-        display.getSize(screenSize);
-        int width = screenSize.x;
-        int height = screenSize.y;
+        // variable photo tells us whether to getIntent from gallery or camera
+        String photo = "gallery";
+
+        if (photo.equals("gallery")) {
+            bitmap = getIntent().getParcelableExtra("bitmap");
+            imageView = (ImageView) findViewById(R.id.imageView);
+            imageView.setImageBitmap(bitmap);
+        } else if (photo.equals("camera")) {
+            bitmap = getIntent().getParcelableExtra("thumbnail");
+            imageView = (ImageView) findViewById(R.id.imageView);
+            imageView.setImageBitmap(bitmap);
+        }
         */
 
-        int width = layout.getWidth();
-        int height = layout.getHeight();
-        Random random = new Random();
-        float x = (float) Math.random() * width;
-        float y = (float) Math.random() * height;
+        // displays selected photo from gallery onto this new activity
+        bitmap = getIntent().getParcelableExtra("bitmap");
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageBitmap(bitmap);
 
-        Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
+        // declares the view in which the circle image will be displayed
+        ImageView circle = (ImageView) findViewById(R.id.circle);
+
+        // creates a bitmap image for the circle to place onto canvas
+        Bitmap bitmap2 = Bitmap.createBitmap(1000, 1000, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap2);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.BLUE);
+
+        // generates random floats for the circle to be placed at
+        float x = (float) Math.random() * bitmap2.getWidth();
+        float y = (float) Math.random() * bitmap2.getHeight();
+
+        // draws the canvas circle on the bitmap image at a random point
         canvas.drawCircle(x, y, 10, paint);
-        circle.setImageBitmap(bitmap);
+
+        // displays the circle at the random point
+        circle.setImageBitmap(bitmap2);
     }
 
 }
